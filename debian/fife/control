@@ -1,0 +1,51 @@
+Source: fife
+Uploaders:
+ Christoph Egger <christoph@debian.org>
+Maintainer: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
+Section: libdevel
+Priority: optional
+Build-Depends:
+ cmake,
+ debhelper (>= 10),
+ dh-python,
+ glee-dev,
+ libalut-dev,
+ libasound2-dev,
+ libboost-dev,
+ libboost-filesystem-dev,
+ libboost-regex-dev,
+ libboost-test-dev,
+ libfifechan-dev (>= 0.1.3),
+ libopenal-dev,
+ libpng-dev,
+ libsdl2-image-dev,
+ libsdl2-ttf-dev,
+ libsdl2-dev,
+ libtinyxml-dev,
+ libunittest++-dev,
+ libvorbis-dev,
+ libxcursor-dev,
+ python-all-dev (>= 2.6.6-3~),
+ swig,
+ zlib1g-dev
+X-Python-Version: >= 2.6
+Standards-Version: 3.9.8
+Vcs-Git: https://anonscm.debian.org/git/pkg-games/fife.git
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-games/fife.git
+Homepage: http://fifengine.de
+
+Package: python-fife
+Section: python
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${python:Depends},
+ ${shlibs:Depends}
+Breaks:
+ unknown-horizons (<< 2013.1),
+ ${python:Breaks}
+Description: FIFE is a multi-platform isometric game engine
+ FIFE stands for Flexible Isometric Free Engine and is a cross
+ platform game creation framework written in C++. It provides you with
+ the ability to create a game using Python interfaces. FIFE also comes
+ as a DLL or static library so you can use C++ as well.

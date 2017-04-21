@@ -1,0 +1,22 @@
+#!/usr/bin/make -f
+DEB_HOST_ARCH ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
+WEAK_HOSTS := mips mipsel
+
+ifneq (,$(findstring $(DEB_HOST_ARCH),$(WEAK_HOSTS)))
+	MAX  := 1
+	TYPE := MinSizeRel
+else
+	MAX  := 2
+	TYPE := RelWithDebInfo
+endif
+
+%:
+	dh $@ --max-parallel=$(MAX) --with python2 --buildsystem=cmake
+
+override_dh_auto_configure:
+	dh_auto_configure -- \
+		-DCMAKE_BUILD_TYPE=$(TYPE)
+
+override_dh_install:
+	dh_install --fail-missing
+	find debian/ -name "LICENSE.md" -delete

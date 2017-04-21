@@ -1,0 +1,23 @@
+From: Markus Koschany <apo@debian.org>
+Date: Mon, 23 Jan 2017 19:26:28 +0100
+Subject: segfault quit game
+
+Bug-Debian: https://bugs.debian.org/852247
+Bug-Upstream: https://github.com/fifengine/fifechan/issues/45
+Origin: https://github.com/fifengine/fifechan/commit/9bceb0c137077361f6e7d9c0fb334ee700cae43e
+---
+ src/gui.cpp | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/src/gui.cpp b/src/gui.cpp
+index 158641b..f93e439 100644
+--- a/src/gui.cpp
++++ b/src/gui.cpp
+@@ -131,6 +131,7 @@ namespace fcn
+         {
+             setTop(NULL);
+         }
++        Widget::_setVisibilityEventHandler(NULL);
+         Widget::_setGuiDeathListener(NULL);
+ 
+         delete mFocusHandler;

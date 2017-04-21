@@ -1,0 +1,176 @@
+fife (0.4.0-3) unstable; urgency=medium
+
+  * Team upload.
+  * debian/rules: Try to prevent build failures on mips and mipsel by using
+    a single thread only and building with CMAKE_BUILD_TYPE=MinSizeRel.
+
+ -- Markus Koschany <apo@debian.org>  Sun, 22 Jan 2017 01:16:48 +0100
+
+fife (0.4.0-2) unstable; urgency=medium
+
+  * Team upload.
+  * Use dh_install --fail-missing to detect when files are not installed
+    into the resulting binary package.
+  * debian/rules: Pass --buildsystem=cmake to dh. (Closes: #851998)
+  * Add clean file and ensure that fife can be built twice in a row.
+
+ -- Markus Koschany <apo@debian.org>  Fri, 20 Jan 2017 20:11:52 +0100
+
+fife (0.4.0-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream version 0.4.0.
+  * Tighten build-dependency on libfifechan-dev.
+  * Drop all patches.
+  * Switch from Scons to CMake.
+  * Fix Lintian warning "extra license file".
+
+ -- Markus Koschany <apo@debian.org>  Thu, 19 Jan 2017 23:58:16 +0100
+
+fife (0.3.5+git160920-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream version 0.3.5+git160920.
+  * Use compat level 10.
+  * Add libfifechan-dev to Build-Depends.
+  * Drop all patches. Fixed upstream.
+  * Add debian/watch file. Thanks to Bart Martens.
+  * Simplify debian/rules.
+  * Switch from SDL1 to SDL2.
+  * Delete static libraries to ensure that fife can be built twice in a row.
+  * Remove debian/clean file.
+  * Drop libguichan-dev from Build-Depends. It is obsolete now.
+  * Add endif.patch and fix a FTBFS.
+
+ -- Markus Koschany <apo@debian.org>  Mon, 07 Nov 2016 20:27:27 +0100
+
+fife (0.3.5-3) unstable; urgency=medium
+
+  * Team upload.
+  * Use compat level 9.
+  * Vcs fields: Use https.
+  * Declare compliance with Debian Policy 3.9.8.
+  * wrap-and-sort -sa.
+  * Add gcc6.diff and fix FTBFS with GCC-6.
+    Thanks to Martin Michlmayr for the report and Graham Inggs for the patch.
+    (Closes: #811858)
+  * Add dh-python to Build-Depends.
+
+ -- Markus Koschany <apo@debian.org>  Fri, 02 Sep 2016 22:45:56 +0200
+
+fife (0.3.5-2) unstable; urgency=medium
+
+  * Team upload.
+  * Link gnukfreebsd10-config.py to gnukfreebsd9-config.py, this
+    to fix builderror on kfreebsd. (Closes: #821765)
+  * Add ext/guichan-0.8.2/config.(guess|sub) to d/clean
+
+ -- Tobias Frost <tobi@debian.org>  Sat, 23 Apr 2016 21:46:57 +0200
+
+fife (0.3.5-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Christoph Egger <christoph@debian.org>  Sun, 01 Sep 2013 16:48:59 +0200
+
+fife (0.3.4-2) experimental; urgency=low
+
+  * Break older unknown-horizons as it only works with matching fife
+    versions (Closes: #703214)
+
+ -- Christoph Egger <christoph@debian.org>  Sun, 17 Mar 2013 17:53:43 +0100
+
+fife (0.3.4-1) experimental; urgency=low
+
+  * New upstream release
+
+ -- Christoph Egger <christoph@debian.org>  Sat, 02 Mar 2013 16:06:30 -0800
+
+fife (0.3.3+r3-3) unstable; urgency=low
+
+  * Include NMU by Anton Gladky, thanks!
+
+ -- Christoph Egger <christoph@debian.org>  Sun, 30 Dec 2012 12:53:30 -0800
+
+fife (0.3.3+r3-2) unstable; urgency=low
+
+  * Import upstream (SVN 3949) patch to fix memory leaking (Closes:
+    #696676)
+
+ -- Christoph Egger <christoph@debian.org>  Sat, 29 Dec 2012 16:36:26 -0800
+
+fife (0.3.3+r3-1.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Add engine/core/util/utf8/utf8* to copyright file (Closes: #690370)
+  * Use packaged version of Glee-library to fix lintian embedded-library
+    autoreject tag.
+
+ -- Anton Gladky <gladky.anton@gmail.com>  Wed, 24 Oct 2012 21:15:06 +0200
+
+fife (0.3.3+r3-1) unstable; urgency=low
+
+  * New upstream release
+  * Build-depend on libpng-dev
+  * Enable testsuite instead of striping it from the tarball as it is
+    free now
+
+ -- Christoph Egger <christoph@debian.org>  Sun, 22 Apr 2012 20:31:31 +0200
+
+fife (0.3.3+r2+dfsg1-4) unstable; urgency=low
+
+  * Import patch from upstream to add support for smaller widescreen
+    displays and fixes crashes on such systems (Closes: #655861)
+  * Set Maintainer to Debian Games Team, me to uploader
+  * Add VCS git URLs
+
+ -- Christoph Egger <christoph@debian.org>  Sat, 14 Jan 2012 13:50:13 +0100
+
+fife (0.3.3+r2+dfsg1-3) unstable; urgency=low
+
+  * Add hurd as well
+
+ -- Christoph Egger <christoph@debian.org>  Mon, 26 Dec 2011 09:36:05 +0100
+
+fife (0.3.3+r2+dfsg1-2) unstable; urgency=low
+
+  * Add kFreeBSD support (pretend being linux2)
+
+ -- Christoph Egger <christoph@debian.org>  Fri, 23 Dec 2011 20:15:29 +0000
+
+fife (0.3.3+r2+dfsg1-1) unstable; urgency=low
+
+  * New upstream release
+  * First release in proper Debian (Closes: #632360)
+
+ -- Christoph Egger <christoph@debian.org>  Tue, 15 Nov 2011 16:00:36 +0100
+
+fife (0.3.2+svn3687-1) weekly; urgency=low
+
+  * New SVN Snapshot
+
+ -- Christoph Egger <christoph@debian.org>  Thu, 23 Jun 2011 15:11:25 +0200
+
+fife (0.3.2+svn3593-2) unstable; urgency=low
+
+  * fix building with python2.7 around
+
+ -- Christoph Egger <christoph@unknown-horizons.org>  Sat, 16 Apr 2011 19:53:11 +0200
+
+fife (0.3.2+svn3593-1) unstable; urgency=low
+
+  * new snapshot
+
+ -- Christoph Egger <christoph@unknown-horizons.org>  Mon, 04 Apr 2011 17:13:48 +0200
+
+fife (0.3.2+svn3587) unstable; urgency=low
+
+  * new snapshot
+
+ -- Christoph Egger <christoph@unknown-horizons.org>  Sun, 13 Feb 2011 16:19:17 +0100
+
+fife (0.3.1+svn3431-1) unstable; urgency=low
+
+  * Initial release.
+
+ -- Christoph Egger <christoph@unknown-horizons.org>  Thu, 16 Sep 2010 18:23:07 +0200
