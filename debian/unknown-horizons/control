@@ -1,0 +1,37 @@
+Source: unknown-horizons
+Section: games
+Priority: optional
+Maintainer: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
+Uploaders:
+ Christoph Egger <christoph@debian.org>
+Build-Depends:
+ debhelper (>= 10),
+ dh-python,
+ docbook-xml,
+ docbook-xsl,
+ imagemagick,
+ intltool,
+ python,
+ xsltproc
+Standards-Version: 3.9.8
+Vcs-Git: https://anonscm.debian.org/git/pkg-games/unknown-horizons.git
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-games/unknown-horizons.git
+Homepage: http://www.unknown-horizons.org
+
+Package: unknown-horizons
+Architecture: all
+Depends:
+ ttf-unifont,
+ python,
+ python-enet,
+ python-fife (>= 0.4.0-2),
+ python-yaml,
+ ${misc:Depends},
+ ${python:Depends},
+ ${shlibs:Depends}
+Description: 2D realtime strategy simulation
+ Unknown Horizons is a 2D realtime strategy simulation with an
+ emphasis on economy and city building. Expand your small settlement
+ to a strong and wealthy colony, collect taxes and supply your
+ inhabitants with valuable goods. Increase your power with a well
+ balanced economy and with strategic trade and diplomacy.

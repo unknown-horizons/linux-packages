@@ -1,0 +1,26 @@
+From: Markus Koschany <apo@debian.org>
+Date: Fri, 20 Jan 2017 22:18:43 +0100
+Subject: VERSION
+
+Fix FTBFS due to undefined RELEASE_VERSION variable.
+Forwarded: no
+---
+ horizons/constants.py | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+diff --git a/horizons/constants.py b/horizons/constants.py
+index e4ff556..0f09c20 100644
+--- a/horizons/constants.py
++++ b/horizons/constants.py
+@@ -84,10 +84,9 @@ def get_git_version():
+ ##Versioning
+ class VERSION:
+ 	RELEASE_NAME    = "Unknown Horizons %s"
+-	RELEASE_VERSION = get_git_version()
+ 	# change for release:
+ 	IS_DEV_VERSION = True
+-	#RELEASE_VERSION = u'2017.1'
++	RELEASE_VERSION = u'2017.1'
+ 
+ 	REQUIRED_FIFE_MAJOR_VERSION = 0
+ 	REQUIRED_FIFE_MINOR_VERSION = 4

@@ -1,0 +1,6 @@
+?package(unknown-horizons):needs="X11" \
+ section="Games/Strategy" \
+ title="Unknown Horizons" \
+ longtitle="Unknown Horizons - 2D realtime strategy simulation" \
+ command="/usr/games/unknown-horizons" \
+ icon="/usr/share/pixmaps/unknown-horizons-32x32.xpm"

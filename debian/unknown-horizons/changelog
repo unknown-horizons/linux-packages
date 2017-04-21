@@ -1,0 +1,182 @@
+unknown-horizons (2017.1+ds-2) unstable; urgency=medium
+
+  * Team upload.
+  * Tighten dependency on python-fife to >= 0.4.0-2. (Closes: #852143)
+
+ -- Markus Koschany <apo@debian.org>  Sun, 22 Jan 2017 01:56:39 +0100
+
+unknown-horizons (2017.1+ds-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream version 2017.1+ds. (Closes: #852041)
+  * Add VERSION.patch and fix a FTBFS because the build system wrongly assumes
+    that we still use a development version.
+  * Add get-orig-source target and remove prebuilt libraries.
+
+ -- Markus Koschany <apo@debian.org>  Fri, 20 Jan 2017 23:05:23 +0100
+
+unknown-horizons (2014.1+git160920-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+    - Fixes startup crash. The game is playable again. (Closes: #797998)
+    - The game no longer embeds UMing.ttc. (Closes: #679118)
+  * Declare compliance with Debian Policy 3.9.8.
+  * Switch to compat level 10.
+  * Use canonical Vcs-fields.
+  * Tighten dependency on python-fife.
+  * wrap-and-sort -sa.
+  * Remove Pre-Depends for dpkg-dev. It is trivially satisfied now.
+  * Remove debian/docs because the file is empty.
+  * Replace embedded Unifont.ttf font with Debian's system font.
+  * Fix Lintian warning executable-not-elf-or-script and remove executable bit
+    from files like tm_*.
+  * Update debian/copyright and use copyright format 1.0. Fix all syntax
+    errors.
+
+ -- Markus Koschany <apo@debian.org>  Wed, 09 Nov 2016 00:31:30 +0100
+
+unknown-horizons (2014.1+ds1-2) unstable; urgency=medium
+
+  * Add dh-python build dependency
+  * add python dependency
+  * upload to unstable
+
+ -- Christoph Egger <christoph@debian.org>  Sun, 03 May 2015 12:55:58 +0200
+
+unknown-horizons (2014.1+ds1-1) experimental; urgency=medium
+
+  * New upstream release
+  * Add watchfile
+  * Upload to experimental (we're in freeze)
+
+ -- Christoph Egger <christoph@debian.org>  Sun, 22 Feb 2015 23:05:25 +0100
+
+unknown-horizons (2013.3+ds1-1) unstable; urgency=low
+
+  [ Markus Koschany ]
+  * Add menu, clean and install file. Convert unknown-horizons.xpm to
+    unknown-horizons-32x32.xpm with imagemagick. Add imagemagick to
+    Build-Depends-Indep. (Closes: #713829)
+  * Remove dh_builddeb override. xz is the default compressor now.
+
+  [ Christoph Egger ]
+  * New upstream version
+
+ -- Christoph Egger <christoph@debian.org>  Wed, 04 Dec 2013 16:29:17 +0100
+
+unknown-horizons (2013.2+ds1-2) unstable; urgency=low
+
+  * upload to unstable
+
+ -- Christoph Egger <christoph@debian.org>  Sun, 23 Jun 2013 12:00:26 +0200
+
+unknown-horizons (2013.2+ds1-1) experimental; urgency=low
+
+  * New upstream release
+
+ -- Christoph Egger <christoph@debian.org>  Mon, 08 Apr 2013 17:17:02 +0200
+
+unknown-horizons (2013.1b+ds1-2) experimental; urgency=low
+
+  * Update dependency on python-fife to 0.3.4 (Closes: #703007)
+
+ -- Christoph Egger <christoph@debian.org>  Sun, 17 Mar 2013 03:53:13 +0100
+
+unknown-horizons (2013.1b+ds1-1) experimental; urgency=low
+
+  * Upstream bugfix release
+
+ -- Christoph Egger <christoph@debian.org>  Tue, 12 Mar 2013 10:22:36 -0700
+
+unknown-horizons (2013.1~+ds1-1) experimental; urgency=low
+
+  * New upstream release
+
+ -- Christoph Egger <christoph@debian.org>  Sun, 10 Mar 2013 21:59:31 -0700
+
+unknown-horizons (2012.1+dfsg1-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Christoph Egger <christoph@debian.org>  Mon, 23 Apr 2012 00:16:46 +0200
+
+unknown-horizons (2011.3+dfsg1-1) unstable; urgency=low
+
+  * Upstream Release
+    * Upload to Debian for the first time (Closes: #632361)
+    * */enet.so removed -- sourceless and not needed as we have python-enet
+
+ -- Christoph Egger <christoph@debian.org>  Fri, 06 Jan 2012 19:03:42 +0100
+
+unknown-horizons (2011.2+git2011.09.02-1) weekly; urgency=low
+
+  * New git snapshot
+
+ -- Christoph Egger <christoph@unknown-horizons.org>  Fri, 02 Sep 2011 17:39:30 +0200
+
+unknown-horizons (2011.2+git2011.08.14-1) weekly; urgency=low
+
+  * New snapshot
+
+ -- Christoph Egger <christoph@unknown-horizons.org>  Sun, 14 Aug 2011 11:47:54 +0200
+
+unknown-horizons (2011.2-1) weekly; urgency=low
+
+  * New Alpha Release
+
+ -- Christoph Egger <christoph@unknown-horizons.org>  Fri, 01 Jul 2011 23:28:41 +0200
+
+unknown-horizons (2011.2~rc4-1) weekly; urgency=low
+
+  * Release Candidate
+
+ -- Christoph Egger <christoph@unknown-horizons.org>  Mon, 27 Jun 2011 16:05:58 +0200
+
+unknown-horizons (2011.1+git2011.06.25-1) weekly; urgency=low
+
+  * New Snapshot
+
+ -- Christoph Egger <christoph@debian.org>  Sun, 26 Jun 2011 16:18:10 +0200
+
+unknown-horizons (2011.1+git2011-06-07-1) weekly; urgency=low
+
+  * New snapshot
+
+ -- Christoph Egger <christoph@unknown-horizons.org>  Tue, 07 Jun 2011 23:53:47 +0200
+
+unknown-horizons (2011.1+git2011-05-29-1) weekly; urgency=low
+
+  * New snapshot
+
+ -- Christoph Egger <christoph@unknown-horizons.org>  Sun, 29 May 2011 13:51:42 +0200
+
+unknown-horizons (2011.1+git2011-05-15-1) weekly; urgency=low
+
+  * New snapshot
+
+ -- Christoph Egger <christoph@unknown-horizons.org>  Sun, 15 May 2011 16:43:54 +0200
+
+unknown-horizons (2011.1-1) release; urgency=low
+
+  * New stable release
+
+ -- Christoph Egger <christoph@unknown-horizons.org>  Sat, 16 Apr 2011 20:17:13 +0200
+
+unknown-horizons (2010.1+git2011.03.12-1) weekly; urgency=low
+
+  * New snapshot
+
+ -- Christoph Egger <christoph@unknown-horizons.org>  Sun, 13 Feb 2011 19:25:45 +0100
+
+unknown-horizons (2010.1-2) release; urgency=low
+
+  * fix dependencies
+
+ -- Christoph Egger <christoph@unknown-horizons.org>  Sat, 18 Sep 2010 14:36:10 +0200
+
+unknown-horizons (2010.1-1) release; urgency=low
+
+  * Initial release
+
+ -- Christoph Egger <christoph@unknown-horizons.org>  Fri, 17 Sep 2010 18:41:35 +0200
