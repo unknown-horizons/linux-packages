@@ -24,25 +24,25 @@ Build-Depends:
  libunittest++-dev,
  libvorbis-dev,
  libxcursor-dev,
- python-all-dev (>= 2.6.6-3~),
+ python-all-dev (>= 3.4),
  swig3.0,
  zlib1g-dev
-X-Python-Version: >= 2.6
+X-Python-Version: >= 3.4
 Standards-Version: 3.9.8
 Vcs-Git: https://anonscm.debian.org/git/pkg-games/fife.git
 Vcs-Browser: https://anonscm.debian.org/cgit/pkg-games/fife.git
 Homepage: http://fifengine.de
 
-Package: python-fife
+Package: python3-fife
 Section: python
 Architecture: any
 Depends:
  ${misc:Depends},
- ${python:Depends},
+ ${python3:Depends},
  ${shlibs:Depends}
 Breaks:
  unknown-horizons (<< 2013.1),
- ${python:Breaks}
+ ${python3:Breaks}
 Description: FIFE is a multi-platform isometric game engine
  FIFE stands for Flexible Isometric Free Engine and is a cross
  platform game creation framework written in C++. It provides you with
