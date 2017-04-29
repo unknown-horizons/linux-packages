@@ -41,7 +41,7 @@ Depends:
  ${python3:Depends},
  ${shlibs:Depends}
 Breaks:
- unknown-horizons (<< 2013.1),
+ unknown-horizons (<< 2017.1),
  ${python3:Breaks}
 Description: FIFE is a multi-platform isometric game engine
  FIFE stands for Flexible Isometric Free Engine and is a cross
