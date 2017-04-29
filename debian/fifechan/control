@@ -7,7 +7,6 @@ Uploaders:
 Build-Depends:
  cmake,
  debhelper (>= 10),
- liballegro4-dev,
  libgl1-mesa-dev,
  libglu1-mesa-dev,
  libsdl2-dev,
