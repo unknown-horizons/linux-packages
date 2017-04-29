@@ -13,7 +13,7 @@ Build-Depends:
  libboost-dev,
  libboost-filesystem-dev,
  libboost-test-dev,
- libfifechan-dev (>= 0.1.3),
+ libfifechan-dev (>= 0.1.4),
  libglew-dev,
  libopenal-dev,
  libpng-dev,
