@@ -12,19 +12,19 @@ Homepage: http://fifengine.net/
 Standards-Version: 3.9.8
 Vcs-Browser: https://anonscm.debian.org/cgit/pkg-games/fifechan.git
 Vcs-Git: https://anonscm.debian.org/git/pkg-games/fifechan.git
-Build-Depends: cmake, debhelper (>= 10), libgl1-mesa-dev, libglu1-mesa-dev, libsdl2-dev, libsdl2-image-dev, libsdl2-ttf-dev
+Build-Depends: cmake, debhelper, libgl1-mesa-dev, libglu1-mesa-dev, libsdl2-dev, libsdl2-image-dev, libsdl2-ttf-dev
 Package-List:
  libfifechan-dev deb libdevel optional arch=any
  libfifechan0.1.4 deb libs optional arch=any
 Checksums-Sha1:
- 90e6d3e9a44ec3940fccd036a674f7a4a3b8fed7 253288 fifechan_0.1.4.orig.tar.gz
- 26f3228aca7b7838705365c19661495a4bba2f13 3764 fifechan_0.1.4.debian.tar.xz
+ 90e6d3e9a44ec3940fccd036a674f7a4a3b8fed7 246181 fifechan_0.1.4.orig.tar.gz
+ 7159fd46e76464074eb8947821db60987230fdf9 3660 fifechan_0.1.4.debian.tar.gz
 Checksums-Sha256:
- a93b015b5852b8fe2a0a2a6891d3de2cacb196732f670e081d7b7966f9ed1b87 253288 fifechan_0.1.4.orig.tar.gz
- 0b2f8d56e968563c5cd3862cc1eb55cd80cfbfdf6c9144d0af3b49bcbb68b156 3764 fifechan_0.1.4.debian.tar.xz
+ a93b015b5852b8fe2a0a2a6891d3de2cacb196732f670e081d7b7966f9ed1b87 246181 fifechan_0.1.4.orig.tar.gz
+ dc79198414d8a37c489769fa73be8e7eb130d8965ccc08b95fa86c0723cf2553 3660 fifechan_0.1.4.debian.tar.gz
 Files:
- 163142907031eea0fd76bd2737afc780 253288 fifechan_0.1.4.orig.tar.gz
- b7f80448cbfb30bc9c1e3934d5288064 3764 fifechan_0.1.4.debian.tar.xz
+ 163142907031eea0fd76bd2737afc780 246181 fifechan_0.1.4.orig.tar.gz
+ 077a1ee52ed53fa06bce9da3025e4418 3660 fifechan_0.1.4.debian.tar.gz
 
 -----BEGIN PGP SIGNATURE-----
 
