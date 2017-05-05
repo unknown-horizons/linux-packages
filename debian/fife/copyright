@@ -6,10 +6,6 @@ Files: *
 Copyright: 2005-2016, FIFE Project
 License: LGPL-2.1+
 
-Files: engine/core/ext/glee/*
-Copyright: 2009  Ben Woodhouse
-License: BSD-2-clause
-
 Files: engine/core/util/utf8/utf8.h engine/core/util/utf8/*
 Copyright: 2006 Nemanja Trifunovic
 License: Boost-Software-License
