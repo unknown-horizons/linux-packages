@@ -1,0 +1,67 @@
+From 400636b6fd76e1d65bd1f2e261d51486f422b3b3 Mon Sep 17 00:00:00 2001
+From: helios2000 <helios2000@gmx.net>
+Date: Fri, 10 Feb 2017 17:22:06 +0100
+Subject: [PATCH] Removed leftover stuff from Cursor. Refs #991 I see no reason
+ to keep XCursor and WMCursor around. Cursor only needs SDL.
+
+---
+ engine/core/video/cursor.cpp | 34 +---------------------------------
+ 1 file changed, 1 insertion(+), 33 deletions(-)
+
+diff --git a/engine/core/video/cursor.cpp b/engine/core/video/cursor.cpp
+index 5d4fd4e6..24f7f51c 100644
+--- a/engine/core/video/cursor.cpp
++++ b/engine/core/video/cursor.cpp
+@@ -20,16 +20,9 @@
+  ***************************************************************************/
+ 
+ // Standard C++ library includes
+-#if defined( WIN32 )
+-#include <windows.h>
+-#include <SDL.h>
+-#endif
+-
+-#if defined( __unix__ )
+-#include <X11/Xcursor/Xcursor.h>
+-#endif
+ 
+ // 3rd party library includes
++#include <SDL.h>
+ 
+ // FIFE includes
+ // These includes are split up in two parts, separated by one empty line
+@@ -45,31 +38,6 @@
+ #include "renderbackend.h"
+ #include "cursor.h"
+ 
+-#if defined( WIN32 )
+-
+-// From SDL_sysmouse.c
+-struct WMcursor {
+-	HCURSOR curs;
+-#ifndef _WIN32_WCE
+-	Uint8 *ands;
+-	Uint8 *xors;
+-#endif
+-};
+-
+-#endif
+-
+-#if defined( __unix__ )
+-
+-// Stops the compiler from confusing it with FIFE:Cursor
+-typedef Cursor XCursor;
+-
+-// From SDL_x11mouse.c
+-struct WMcursor {
+-	Cursor x_cursor;
+-};
+-
+-#endif
+-
+ namespace FIFE {
+ 	/** Logger to use for this source file.
+ 	 *  @relates Logger
+-- 
+2.11.1
+

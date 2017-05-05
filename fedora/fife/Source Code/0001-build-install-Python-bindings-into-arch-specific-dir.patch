@@ -1,0 +1,32 @@
+From fedbedf5a02059206b50c3c576857bb09c43a620 Mon Sep 17 00:00:00 2001
+From: Igor Gnatenko <ignatenkobrain@fedoraproject.org>
+Date: Thu, 9 Feb 2017 18:46:31 +0100
+Subject: [PATCH] build: install Python bindings into arch-specific directory
+
+Because we're shipping shared objects there.
+
+Also, use sys.stdout.write() to not bother CMake for trailing newline.
+
+Signed-off-by: Igor Gnatenko <ignatenkobrain@fedoraproject.org>
+---
+ CMakeLists.txt | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 0894c367..ce32e959 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -880,8 +880,8 @@ if(build-python)
+     # Install Python package locally, e.g. into "C:\Python27\Lib\site-packages\fife"
+     #
+     execute_process(
+-      COMMAND  ${PYTHON_EXECUTABLE} -c "from distutils.sysconfig import get_python_lib; print (get_python_lib())" 
+-      OUTPUT_VARIABLE PYTHON_SITE_PACKAGES OUTPUT_STRIP_TRAILING_WHITESPACE
++      COMMAND  ${PYTHON_EXECUTABLE} -c "import sys; from distutils.sysconfig import get_python_lib; sys.stdout.write(get_python_lib(True))"
++      OUTPUT_VARIABLE PYTHON_SITE_PACKAGES
+     )
+ 
+     # Slash-Fix: Cmake would create a warning, when using the variable in FILES or DIRECTORY without changing it.
+-- 
+2.11.1
+

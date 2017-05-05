@@ -24,3 +24,12 @@ Stable:
  * fifengine - http://packages.ubuntu.com/de/zesty/python-fife
  * fifechan - http://packages.ubuntu.com/de/zesty/libfifechan0.1.3
  * Unknown-Horizons - http://packages.ubuntu.com/de/zesty/unknown-horizons
+
+## Fedora:
+
+Stable:
+-------
+
+  * fifengine - https://bugzilla.redhat.com/show_bug.cgi?id=1420881
+  * fifechan - https://src.fedoraproject.org/cgit/rpms/fifechan.git/
+  * Unknown-Horizons -
