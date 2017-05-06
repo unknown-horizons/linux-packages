@@ -5,7 +5,7 @@ Maintainer: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
 Uploaders:
  Christoph Egger <christoph@debian.org>
 Build-Depends:
- debhelper (>= 10),
+ debhelper,
  dh-python,
  docbook-xml,
  docbook-xsl,
@@ -24,7 +24,7 @@ Depends:
  ttf-unifont,
  python,
  python-enet,
- python-fife (>= 0.4.0-2),
+ python-fife (>= 0.4.1-0),
  python-yaml,
  ${misc:Depends},
  ${python:Depends},
