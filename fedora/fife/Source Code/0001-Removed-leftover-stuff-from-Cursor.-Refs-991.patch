@@ -1,8 +1,7 @@
 From 400636b6fd76e1d65bd1f2e261d51486f422b3b3 Mon Sep 17 00:00:00 2001
 From: helios2000 <helios2000@gmx.net>
 Date: Fri, 10 Feb 2017 17:22:06 +0100
-Subject: [PATCH] Removed leftover stuff from Cursor. Refs #991 I see no reason
- to keep XCursor and WMCursor around. Cursor only needs SDL.
+Subject: [PATCH] Removed leftover stuff from Cursor. Refs #991 I see no reason to keep XCursor and WMCursor around. Cursor only needs SDL.
 
 ---
  engine/core/video/cursor.cpp | 34 +---------------------------------

@@ -1,5 +1,3 @@
-%bcond_without allegro
-%bcond_without irrlicht
 %bcond_without opengl
 %if %{with opengl}
   %bcond_with opengl_contrib
@@ -40,44 +38,6 @@ Requires:       %{name}%{?_isa} = %{?epoch:%{epoch}:}%{version}-%{release}
 
 %description devel
 %{summary}.
-
-%if %{with allegro}
-%package allegro
-Summary:        Allegro extension for %{name}
-BuildRequires:  allegro-devel
-Requires:       %{name}%{?_isa} = %{?epoch:%{epoch}:}%{version}-%{release}
-
-%description allegro
-%{summary}.
-
-%package allegro-devel
-Summary:        Development files for Allegro extension for %{name}
-Requires:       %{name}-devel%{?_isa} = %{?epoch:%{epoch}:}%{version}-%{release}
-Requires:       %{name}-allegro%{?_isa} = %{?epoch:%{epoch}:}%{version}-%{release}
-Requires:       allegro-devel%{?_isa}
-
-%description allegro-devel
-%{summary}.
-%endif
-
-%if %{with irrlicht}
-%package irrlicht
-Summary:        Irrlicht extension for %{name}
-BuildRequires:  irrlicht-devel
-Requires:       %{name}%{?_isa} = %{?epoch:%{epoch}:}%{version}-%{release}
-
-%description irrlicht
-%{summary}.
-
-%package irrlicht-devel
-Summary:        Development files for Irrlicht extension for %{name}
-Requires:       %{name}-devel%{?_isa} = %{?epoch:%{epoch}:}%{version}-%{release}
-Requires:       %{name}-irrlicht%{?_isa} = %{?epoch:%{epoch}:}%{version}-%{release}
-Requires:       irrlicht-devel%{?_isa}
-
-%description irrlicht-devel
-%{summary}.
-%endif
 
 %if %{with opengl}
 %package opengl
@@ -134,8 +94,6 @@ mkdir %{_target_platform}
 %build
 pushd %{_target_platform}
   %cmake ..                                                                        \
-    -DENABLE_ALLEGRO=%{?with_allegro:ON}%{!?with_allegro:OFF}                      \
-    -DENABLE_IRRLICHT=%{?with_irrlicht:ON}%{!?with_irrlicht:OFF}                   \
     -DENABLE_OPENGL=%{?with_opengl:ON}%{!?with_opengl:OFF}                         \
     -DENABLE_OPENGL_CONTRIB=%{?with_opengl_contrib:ON}%{!?with_opengl_contrib:OFF} \
     -DENABLE_SDL=%{?with_sdl:ON}%{!?with_sdl:OFF}                                  \
@@ -154,10 +112,6 @@ popd
 
 %files devel
 %{_libdir}/lib%{name}.so
-%exclude %{_includedir}/%{name}/allegro/
-%exclude %{_includedir}/%{name}/allegro.hpp
-%exclude %{_includedir}/%{name}/irrlicht/
-%exclude %{_includedir}/%{name}/irrlicht.hpp
 %exclude %{_includedir}/%{name}/opengl/
 %exclude %{_includedir}/%{name}/opengl.hpp
 %exclude %{_includedir}/%{name}/contrib/opengl/
@@ -166,30 +120,6 @@ popd
 %exclude %{_includedir}/%{name}/contrib/sdl/
 %{_includedir}/%{name}/
 %{_includedir}/%{name}.hpp
-
-%if %{with allegro}
-%post allegro -p /sbin/ldconfig
-%postun allegro -p /sbin/ldconfig
-%files allegro
-%{_libdir}/lib%{name}_allegro.so.*
-
-%files allegro-devel
-%{_libdir}/lib%{name}_allegro.so
-%{_includedir}/%{name}/allegro/
-%{_includedir}/%{name}/allegro.hpp
-%endif
-
-%if %{with irrlicht}
-%post irrlicht -p /sbin/ldconfig
-%postun irrlicht -p /sbin/ldconfig
-%files irrlicht
-%{_libdir}/lib%{name}_irrlicht.so.*
-
-%files irrlicht-devel
-%{_libdir}/lib%{name}_irrlicht.so
-%{_includedir}/%{name}/irrlicht/
-%{_includedir}/%{name}/irrlicht.hpp
-%endif
 
 %if %{with opengl}
 %post opengl -p /sbin/ldconfig

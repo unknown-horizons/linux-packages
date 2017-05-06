@@ -16,14 +16,14 @@ Build-Depends: cmake, debhelper, dh-python, libglew-dev, libalut-dev, libasound2
 Package-List:
  python-fife deb python optional arch=any
 Checksums-Sha1:
- b6137f1fc3f0b80ec937f3a430cc17b6f3db4094 15966275 fife_0.4.1.orig.tar.gz
- 04900a114d597772e8f40f8f9bac9e9eddd0a9fb 4844 fife_0.4.1.debian.tar.gz
+ b6137f1fc3f0b80ec937f3a430cc17b6f3db4094 15972607 fife_0.4.1.orig.tar.gz
+ 02147e6162f49585227d6ca38b57ddb9bb9cb8c1 5231 fife_0.4.1.debian.tar.gz
 Checksums-Sha256:
- bae3fc591cc2891f7d1b3a656a5d8ad700ecc2e297ad453bf4f1bcbbf82e8cb2 15966275 fife_0.4.1.orig.tar.gz
- 900548e05f74ccaf093b10153339845215c699786251eb640f0e48f04059bc40 4844 fife_0.4.1.debian.tar.gz
+ bae3fc591cc2891f7d1b3a656a5d8ad700ecc2e297ad453bf4f1bcbbf82e8cb2 15972607 fife_0.4.1.orig.tar.gz
+ 8ed51a9d85f78c508240f69419b41c356c67c0eeaae0af53c0de977b24beb25f 5231 fife_0.4.1.debian.tar.gz
 Files:
- 6ce5533102c4993b44c3ba8347f4ca93 15966275 fife_0.4.1.orig.tar.gz
- 9147ce9ad5f35db525b85da1ecafaa4d 4844 fife_0.4.1.debian.tar.gz
+ 6ce5533102c4993b44c3ba8347f4ca93 15972607 fife_0.4.1.orig.tar.gz
+ 14312d56d74348ccd72b5a59c378e3bd 5231 fife_0.4.1.debian.tar.gz
 
 -----BEGIN PGP SIGNATURE-----
 
