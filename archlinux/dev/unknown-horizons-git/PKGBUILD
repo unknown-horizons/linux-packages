@@ -1,27 +1,41 @@
-# Maintainer: Chris Oelmueller <chris.oelmueller@gmail.com>
+# Maintainer: Lucki <https://aur.archlinux.org/account/Lucki>
+# Contributor: Chris Oelmueller <chris.oelmueller@gmail.com>
 # Contributor: Thomas Kinnen <thomas.kinnen@gmail.com>
 # Contributor: Thomas Kowaliczek-Schmer <thomas.kowaliczek@posteo.de>
+# shellcheck shell=bash
+# shellcheck disable=SC2034,SC2154
 
 pkgname=unknown-horizons-git
-pkgver=2017.2.373.g8319a4773
+_pkgname=${pkgname%-git}
+pkgver=2019.1.r219.gaf9c8ef5c
 pkgrel=1
 pkgdesc="Open source real-time strategy game with the comfy Anno1602 feeling."
-arch=("i686" "x86_64")
-url="http://www.unknown-horizons.org"
+arch=('any')
+url="https://unknown-horizons.org/"
 license=('GPL' 'CCPL')
-depends=('fife-git' 'python' 'python-yaml' 'python-pillow' 'python-future' )
-makedepends=('git' 'intltool')
-conflicts=('unknown-horizons-svn' 'unknown-horizons')
-replaces=('unknown-horizons-svn' 'unknown-horizons')
-source=("git://github.com/unknown-horizons/unknown-horizons.git")
-md5sums=('SKIP')
+depends=('fife' 'python-distro' 'python-pillow' 'python-yaml')
+makedepends=('git' 'intltool' 'python-setuptools')
+conflicts=("$_pkgname")
+provides=("$_pkgname")
+source=("$pkgname::git+https://github.com/$_pkgname/$_pkgname.git")
+sha512sums=('SKIP')
 
 pkgver() {
-	cd "$srcdir/${pkgname%-*}"
-	git describe  --tags --match "20[0-9][0-9]\.[0-9]" | sed 's/-/./g'
+    cd "$pkgname" || exit
+    printf "%s.%s" \
+        "$(grep -E -o 'RELEASE_VERSION=[0-9]+\.[0-9]+' <development/create_release_tarball.sh | sed -r 's/RELEASE_VERSION=//g')" \
+        "$(git describe --long --tags | awk -F '-' '{print "r" $(NF-1) "." $(NF)}')"
+}
+
+build() {
+    cd "$pkgname" || exit
+    # unknown-horizons build system misses a few files if the build step is seperated from the install step
+    # -> Do not build here for now
+    # UH_USER_DIR="UH_USER_DIR" python setup.py build
+    UH_USER_DIR="UH_USER_DIR" python horizons/engine/generate_atlases.py 2048
 }
 
 package() {
-	cd "$srcdir/${pkgname%-*}"
-	python setup.py install --root="$pkgdir" --optimize=1
+    cd "$pkgname" || exit
+    UH_USER_DIR="UH_USER_DIR" python setup.py install --root="$pkgdir/" --optimize=1 #--skip-build
 }

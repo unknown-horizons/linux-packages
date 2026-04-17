@@ -7,14 +7,19 @@ provides=("fife" "fife-svn")
 conflicts=("fife" "fife-svn")
 pkgdesc="The mission of the FIFE project is to create a cross platform game creation framework"
 url="http://www.fifengine.net/"
-pkgver=0.4.1.r372.g85626ccd
+pkgver=0.4.2.r530.g367abe2b1
 pkgrel=1
 arch=('i686' 'x86_64')
 license=('LGPL')
-depends=('sdl2' 'boost' 'sdl2_ttf' 'sdl2_image' 'libvorbis' 'libogg' 'openal' 'swig' 'python' 'python-future' 'zlib' 'libgl' 'libpng' 'tinyxml' 'glew' 'fifechan-git')
-makedepends=('cmake' 'git')
-source=(git+https://github.com/fifengine/fifengine.git)
+depends=('fifechan' 'glew' 'python'
+         'libgl' 'libogg' 'libpng' 'libvorbis' 'utf8cpp'
+         'sdl2' 'sdl2_ttf' 'sdl2_image' 'openal' 'tinyxml2' 'zlib')
+makedepends=('cmake' 'git' 'swig>=4')
+source=("git+https://github.com/fifengine/fifengine.git")
+
 md5sums=('SKIP')
+sha1sums=('SKIP')
+
 
 pkgver() {
   cd "$srcdir/fifengine"
@@ -25,8 +30,8 @@ build() {
   cd "$srcdir/fifengine"
   # [TODO] Due to severe laziness, I have not tested in-source builds yet
   [[ -d "build" ]] && rm -r "build"
-  mkdir -p "build" && cd "build"
-  cmake -Dcegui=OFF -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
+  mkdir build; cd build
+  cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr -DBUILD_PYTHON_BINDINGS=ON -USE_VCPKG=OFF ..
   # to build C/C++ version comment this in and the line above out.
   # cmake -Dbuild-library=ON -DCMAKE_INSTALL_PREFIX:PATH=/usr -DCMAKE_INSTALL_LIBDIR:PATH=/usr/lib ..
   make

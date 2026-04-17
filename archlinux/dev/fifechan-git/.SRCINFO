@@ -10,7 +10,6 @@ pkgbase = fifechan-git
 	makedepends = cmake
 	makedepends = make
 	depends = sdl2_image
-	depends = allegro4
 	depends = libgl
 	depends = glut
 	provides = fifechan
