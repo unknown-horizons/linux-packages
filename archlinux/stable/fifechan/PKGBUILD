@@ -1,20 +1,20 @@
 # Maintainer: Kilian Köppchen <kiliankoeppchen at gmail dot com>
 pkgname=fifechan
-pkgver=0.1.5
+pkgver=0.2.0
 pkgrel=1
 pkgdesc="A C++ GUI library designed for games. It comes with a standard set of 'widgets'."
 arch=(any)
 url="http://fifengine.github.io/fifechan/"
 license=('LGPL2.1')
-depends=('sdl2_image' 'glut')
+depends=('sdl3_image' 'libgl' 'glut' 'catch2' 'sdl3_mixer' 'utf8cpp' 'sdl3_ttf')
 makedepends=('cmake' 'make')
 provides=('fifechan')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/fifengine/$pkgname/archive/$pkgver.tar.gz")
-sha512sums=('713f46ac8310f333c599a17c53e83b43c1e71dc0a631596eae0089877409e48f87fa25ca067734817ca8ddc75ecd7b99ccda227fc29036676a87e441f8aa7d2d')
+sha512sums=('2ee094bdc5ce92a185679f487a13fd7848ec8432ce659949a721f971810cf95e2b79a7709fcf91d7b1ca3c4c2506650b4244ffcc9dd95de88ae784de960f2569')
 build() {
 	cd "$srcdir/$pkgname-$pkgver"
 	mkdir -p build && cd build
-	cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
+	cmake -DUSE_VCPKG=OFF -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
 	make
 }
 
